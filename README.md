@@ -27,49 +27,19 @@ Para el registro de esta tecnica, se hace una segmentación por fases que descri
 
 Para el desarrollo de esta prueba medica es necesario tener en cuenta factores como la limpieza de la piel, la colocacion de los electrodos en la ubicacion de las derivaciones a evaluar del corazon y la fijacion del electrodo con un gel conductor.
 
+La frecuencia cardiaca es el número de veces que se contrae el corazón en un minuto, la interacción del sistema existe cuando se afecta la neutralidad del sistema, por ejemplo ante una situación de estrés o peligro afectando la frecuencia cardiaca. Aumentando la frecuencia cardiaca por medio de la liberación de neurotransmisores como la noradrenalina permitiendo un mayor bombeo de sangre y aumentando la fuerza de contracción lo cual mejora el gasto cardiaco. Mientras que en el sistema parasimpatico disminuye la frecuencia cardiaca por medio de la liberacion de acetilcolina reduciendo la frecuencia de contraccion lo cual permite al cuerpo descansar ademas de disminuir la fuerza de contraccion que disminuye la fuerza del corazon.
 
 ### Sistema de adquisicion de datos (DAQ)
 Es un conjunto de componentes que permite medir un fenomeno electrico o fisico, incluye sensores, convertidores analogo-digitales. Mide señales fisicas del mundo real y las convierte en datos digitales para su analisis. Este sistema es fundamental para capturar la actividad electrica del musculo en tiempo real, utilizando su capacidad para digitalizar las señales analogicas que vienen de los electrodos. garantizando que los datos sean confiables.
 
-### Filtrado de señales.
-#### Ventanas
-Son funciones matemáticas que se aplican cuando la señal no tenga un numero entero en un intervalo de adquisición, se encargan de reducir la amplitud de discontinuidades que distorcionen la señal.
+### Variabilidad de la frecuencia cardiaca (HRV).
+Es un indicador de el equilibrio en el SNA, para medir las fluctuaciones en los tiempos entre latidos consecutivos se pueden realizar por medio de diferentes metodos, como el analisis de tiempo dominante, el cual analiza directamente los intervalos RR, obteniendo informacion valiosa sobre la dinamica cardiaca. otro metodo podria ser el analisis espectral obteniendo informacion de los sistemas nerviosos simpaticos y parasimpaticos sobre la VFC, donde a muy baja frecuencia esta alimentado a 0.04Hz y a una alta frecuencia esta alimentado sobre un rango de 0.2 a 0.5Hz dependiendo de la frecuencia respiratoria. 
 
-- Ventana Hanning
-Reduce al minimo las discontinuidades, es útil para minimizar la interferencia entre frecuencias cercanas, tiene un equilibrio entre resolución espectral y bajo nivel de fuga espectral, su función alcanza cero en ambos extremos.
+### Transformada Wavelet.
+La transformada wavelet es una técnica matemática que descompone una señal en una serie de funciones básicas llamadas wavelets. A diferencia de la transformada de Fourier, que descompone una señal en componentes sinusoidales de diferentes frecuencias, las wavelets ofrecen una representación más localizada en el tiempo y la frecuencia, lo que las hace particularmente útiles para analizar señales no estacionarias como las biológicas.
+Las wavelets son funciones con una duración limitada y un valor promedio cercano a cero. Su forma puede variar, lo que permite adaptar el análisis a diferentes tipos de señales. Al descomponer una señal en wavelets, se obtiene una representación que revela tanto los componentes de baja frecuencia (tendencias a largo plazo) como los de alta frecuencia (detalles locales) [5].
+En este laboratorio, hacer uso de la técnica del electrocardiograma (ECG) la wavelet transformada permite descomponer una señal compleja en diferentes frecuencias y localizaciones temporales, lo que facilita la identificación de características específicas y la detección de anomalías.
 
-- Ventana de Hamming
-Es muy parecida a la ventana de Hanning, es útil para mantener la amplitud de la señal sin distorcionarla. Sus extremos no llegan a cero a diferencia de las ventanas hanning.
-
-En esta practica utilizamos ambas ventanas, pudimos observar la consistencia entre ambas ventanas, especificamente en las frecuencias de ambos metodos, la diferencia entre ambos es menor a 1Hz. Sin embargo la ventana Hamming mostro valores mas altos en la contraccion 1, evidenciando su mejor resolucion ante altas frecuencias.
-
-##### Contraccion 1
-![image](https://github.com/user-attachments/assets/605de27f-a096-4832-8dd0-7c0346e781e4)
-![image](https://github.com/user-attachments/assets/06975a96-76ac-40f1-b3f4-f6bc82463f11)
-![image](https://github.com/user-attachments/assets/a78d4ebb-04ce-4239-babf-5f0734e1fd60)
-
-
-##### Contraccion 2
-![image](https://github.com/user-attachments/assets/f6c953b6-8b34-49dc-a44f-622ee05b09f5)
-![image](https://github.com/user-attachments/assets/a44cf049-7857-4c21-a0f3-01bafbd0974d)
-![image](https://github.com/user-attachments/assets/9587ca2f-3f8f-4d70-b6a2-8490698d766d)
-
-En las Contracciones 1 y 2 se evidencian frecuencias de 98HZ a 101Hz esto nos enseña una activacion muscular vigorosa, lo cual es comun en contracciones iniciales por medio de fibras rapidas tipo 2.  
-
-##### Contraccion 36
-![image](https://github.com/user-attachments/assets/07fb4bdf-8133-4866-bbe6-03563804f42d)
-![image](https://github.com/user-attachments/assets/9a21204d-1663-4e8d-8664-589ebe3c0628)
-![image](https://github.com/user-attachments/assets/645d5b98-eaf3-453b-a863-23a0b6ea84d7)
-
-
-##### Contraccion 37
-![image](https://github.com/user-attachments/assets/480cf39e-13ce-43ae-92ed-e63cf7006eb7)
-![image](https://github.com/user-attachments/assets/2cd3eeb3-7057-4847-8eab-a0fd78222a0c)
-![image](https://github.com/user-attachments/assets/39ad9a1a-8205-4254-95c4-5476e5416671)
-![image](https://github.com/user-attachments/assets/742eece3-d46a-4cbf-9e39-dcebc2a2a76c)
-
-En las contracciones 36 y 37 podemos observar frecuencias bajas menores a 30Hz indicando una fatiga muscular avanzada donde claramente se evidencia la actividad de las fibras lentas tipo 1.
-</p>
     
 #### Transformada rapida de Fourier.
 
