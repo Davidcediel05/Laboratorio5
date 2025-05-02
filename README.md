@@ -36,40 +36,12 @@ Es un conjunto de componentes que permite medir un fenomeno electrico o fisico, 
 Es un indicador de el equilibrio en el SNA, para medir las fluctuaciones en los tiempos entre latidos consecutivos se pueden realizar por medio de diferentes metodos, como el analisis de tiempo dominante, el cual analiza directamente los intervalos RR, obteniendo informacion valiosa sobre la dinamica cardiaca. otro metodo podria ser el analisis espectral obteniendo informacion de los sistemas nerviosos simpaticos y parasimpaticos sobre la VFC, donde a muy baja frecuencia esta alimentado a 0.04Hz y a una alta frecuencia esta alimentado sobre un rango de 0.2 a 0.5Hz dependiendo de la frecuencia respiratoria. 
 
 ### Transformada Wavelet.
-La transformada wavelet es una técnica matemática que descompone una señal en una serie de funciones básicas llamadas wavelets. A diferencia de la transformada de Fourier, que descompone una señal en componentes sinusoidales de diferentes frecuencias, las wavelets ofrecen una representación más localizada en el tiempo y la frecuencia, lo que las hace particularmente útiles para analizar señales no estacionarias como las biológicas.
+La transformada wavelet es una técnica matemática la cual se encarga de descomponer una señal en una serie de funciones básicas llamadas wavelets. A diferencia de la transformada de Fourier, que descompone una señal en componentes sinusoidales de diferentes frecuencias, las wavelets ofrecen una representación más localizada en el tiempo y la frecuencia, lo que las hace particularmente útiles para analizar señales no estacionarias como las biológicas.
 Las wavelets son funciones con una duración limitada y un valor promedio cercano a cero. Su forma puede variar, lo que permite adaptar el análisis a diferentes tipos de señales. Al descomponer una señal en wavelets, se obtiene una representación que revela tanto los componentes de baja frecuencia (tendencias a largo plazo) como los de alta frecuencia (detalles locales) [5].
 En este laboratorio, hacer uso de la técnica del electrocardiograma (ECG) la wavelet transformada permite descomponer una señal compleja en diferentes frecuencias y localizaciones temporales, lo que facilita la identificación de características específicas y la detección de anomalías.
 
     
-#### Transformada rapida de Fourier.
 
-<P>
-Esta transformación es una herramienta crucial para analizar y manipular el contenido espectral del audio, esto es fundamental para aplicaciones como la separación de fuentes.
-Aplicación. La Transformada Rápida de Fourier (FFT) procesa una señal de audio en el dominio del tiempo, donde se representa la amplitud de la onda sonora a lo largo del tiempo, y la transforma en el dominio de la frecuencia. Esto permite visualizar la intensidad de cada componente de frecuencia presente en la señal original, es decir, identificar qué frecuencias conforman el sonido. En el caso del laboratorio, donde se analizan dos fuentes con diferentes timbres de voz, la FFT permite reconocer los rangos de frecuencia característicos de cada tipo de voz, donde una voz aguda ocuparia un rango de frecuencia alto, mientras que una voz gruesa ocuparia un rango de frecuencias bajas. 
-</p>
-
-#### Transformada de Fourier.
-<P>
-Una transformacion es una operacion que convierte una señal desde un dominio a otro dominio, la transformada de fourier convierte una señal del dominio del tiempo hacie el dominio de la frecuencia. Lo cual permite analizar las señales en dominios alternativos lo cual permite identificar las caracteristicas como frecuencias.
-
-
-![image](https://github.com/user-attachments/assets/e99929ac-96c2-49d6-a698-49534e1e54b7)
-![image](https://github.com/user-attachments/assets/88e9aaf2-18df-4590-8c21-bdc98815744e)
-
-![image](https://github.com/user-attachments/assets/654d9a8a-8856-4f38-9b46-acaa4eee6157)
-![image](https://github.com/user-attachments/assets/ee5c9486-1435-4d9e-8af1-fdb47ac1f634)
-
-![image](https://github.com/user-attachments/assets/ecf733fa-216f-441c-8285-62baba6ab65c)
-![image](https://github.com/user-attachments/assets/8a446bea-2efc-49e2-a544-22376ce016fd)
-
-![image](https://github.com/user-attachments/assets/664a0529-c497-4751-be44-00c36b50ba20)
-![image](https://github.com/user-attachments/assets/75da7548-4a08-4ae2-9ca9-60fbe488d075)
-
-Podemos observar para la contraccion 1 y 37 de la transformada de furier en la ventana Hamming diferencias clave como la amplitud de la frecuencia, para la contraccion 1 la amplitud del pico principal es mayor a la amplitud de la contraccion 37, 220 es la amplitud en la contraccion 1 y 80 en la 37. Esto nos indica que la contraccion inicial tiene mayor potencia en la frecuencia dominante, Mientras que en la contraccion final la potencia ha disminuido significativamente lo que evidencia los indicios de fatiga muscular. Se obserba que mediante el musculo se fatiga la señal se vuelve mas dispersa en los espectros de potencia.
-
-Si comparamos las ventanas hamming y hanning para las mismas contracciones se evidencia que la ventana Hamming mantiene mejor la energia del pico. Mientras que la ventana Hanning reduce la contamincion espectral. FFT con Hann tiene un pico principal de 75, es mas limpia y con menos ruido fuera del pico, FFT con Hamming tiene el pico ligeramente mayor (80) y tiene mayor presencia de los lobulos laterales.
-
-</p>
 
 
 ### Analisis estadisticos.
