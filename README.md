@@ -36,44 +36,69 @@ Es un conjunto de componentes que permite medir un fenomeno electrico o fisico, 
 Es un indicador de el equilibrio en el SNA, para medir las fluctuaciones en los tiempos entre latidos consecutivos se pueden realizar por medio de diferentes metodos, como el analisis de tiempo dominante, el cual analiza directamente los intervalos RR, obteniendo informacion valiosa sobre la dinamica cardiaca. otro metodo podria ser el analisis espectral obteniendo informacion de los sistemas nerviosos simpaticos y parasimpaticos sobre la VFC, donde a muy baja frecuencia esta alimentado a 0.04Hz y a una alta frecuencia esta alimentado sobre un rango de 0.2 a 0.5Hz dependiendo de la frecuencia respiratoria. 
 
 ### Transformada Wavelet.
-La transformada wavelet es una técnica matemática la cual se encarga de descomponer una señal en una serie de funciones básicas llamadas wavelets. A diferencia de la transformada de Fourier, que descompone una señal en componentes sinusoidales de diferentes frecuencias, las wavelets ofrecen una representación más localizada en el tiempo y la frecuencia, lo que las hace particularmente útiles para analizar señales no estacionarias como las biológicas.
-Las wavelets son funciones con una duración limitada y un valor promedio cercano a cero. Su forma puede variar, lo que permite adaptar el análisis a diferentes tipos de señales. Al descomponer una señal en wavelets, se obtiene una representación que revela tanto los componentes de baja frecuencia (tendencias a largo plazo) como los de alta frecuencia (detalles locales) [5].
-En este laboratorio, hacer uso de la técnica del electrocardiograma (ECG) la wavelet transformada permite descomponer una señal compleja en diferentes frecuencias y localizaciones temporales, lo que facilita la identificación de características específicas y la detección de anomalías.
+La transformada wavelet es una técnica matemática la cual se encarga de descomponer una señal en una serie de funciones básicas llamadas wavelets. A diferencia de la transformada de Fourier, que descompone una señal en componentes sinusoidales de diferentes frecuencias, las wavelets ofrecen una representación más localizada en el tiempo y la frecuencia, lo que las hace particularmente útiles para analizar señales no estacionarias.
+Las wavelets son funciones con una duración limitada y un valor promedio cercano a cero. Su forma puede variar, lo que permite adaptar el análisis a diferentes tipos de señales. Al descomponer una señal en wavelets, se obtiene una representación que revela tanto los componentes de baja frecuencia (tendencias a largo plazo) como los de alta frecuencia.
+En este laboratorio, hacer uso de la técnica del electrocardiograma (ECG) la wavelet transformada permite descomponer una señal compleja en diferentes frecuencias y localizaciones temporales, lo que facilita la identificación de características específicas y la detección de anomalías. hay diferentes tipos de transformada, como por ejemplo.
+•	Wavelet de Haar: Una de las wavelets más simples, útil para detectar discontinuidades y cambios bruscos en la señal.
+•	Wavelets de Daubechies: Wavelets con diferentes niveles de regularidad, lo que las hace versátiles para una amplia gama de aplicaciones.
+•	Wavelet de Morlet: Wavelet compleja con una forma similar a una onda sinusoidal amortiguada, adecuada para analizar señales con componentes tanto sinusoidales como transitorios.
+•	Wavelet de Symlet: Similar a la wavelet de Daubechies, pero con simetría alrededor de cero.
+•	Wavelet de Coiflet: Wavelet con un número de momentos nulos, lo que la hace útil para aproximar funciones suaves.
 
+
+### Diagrama de flujo
+
+![image](https://github.com/user-attachments/assets/36ae25c8-3379-47e8-8ed6-56edf2e5cb7d)
+
+
+
+
+### Analisis de resultados.
+<p>
+    En la comparacion de la señal original contra la filtrada podemos observar una mejora en la calidad señal ante el filtrado del ruido evitando eliminar componentes importantes del electrocardiograma. ademas las ondas R son mas distinguibles, lo que es eficaz para evitar errores en el analisis de hrv.
     
+ ![image](https://github.com/user-attachments/assets/c4a49e5d-e657-43a7-9bf4-ca92611ba2f2).
 
+Para la deteccion de picos R en los primeros 10 segundos cada cruz roja marca la posicion de un pico R detectado por medio de la funcion find_peaks con un umbral ajustado, donde se evidencia un ritmo cardiaco estable. Los picos R fueron detectados de manera correcta a lo largo del tiempo, el algoritmo pudo discriminar los eventos R reales, se logro estimar la frecuencia cardiaca y analizar la Heart Rate Variability (HRV).
 
+![image](https://github.com/user-attachments/assets/b380200e-22da-40d7-8ef5-69bccf4ea78e)
 
-### Analisis estadisticos.
-<p>
- Por medio de este analisis validaremos los hallasgos fisiologicos, evidenciando que la disminucion de la frecuencia no sea aleatorea, sino que nos muestre su asociacion con la fatiga.
- 
-![image](https://github.com/user-attachments/assets/6e47d9f0-39ad-4e1a-994f-d8f2018011a9)
+Para analizar la Señal RR interpolada para HRV podemos evidenciar una alta variabilidad en los intervalos RR por la actividad del sistema nervioso autonomo, se reflejan tonos en el sistema simpatico y parasimpatico donde en algunas secciones aumenta o disminuye, ademas esta señal es la base para generar un espectograma usando la transformada wavelet.
 
-En la imagen podemos observar los resultados de un analisis de fatiga muscular basado en una frecuencia dominante, no aprobamos la hipotesis nula debido a la diferencia significativa entre frecuencias iniciales y frecuencias finales, lo que podria evidenciar la presencia de una fatiga muscular puesto a que la frecuencia dominante disminuye mediante aumenta el tiempo, reflejando los cambios en la conduccion neuromuscular y en la unidad motora.
+![image](https://github.com/user-attachments/assets/52bf0f53-98ba-45f6-ba3c-85cefdd2a7a9)
+
+Por medio de la transformada de Wavelet continua de Morlet, podemos observar variaciones espaectrales indicando fluctuaciones en la modulacion del corazon, se evidencia la energia concentrada en las bandas LF lo que nos indica que hay cambios en la actividad simpatica o la respiracion, ademas esta herramienta nos permite detectar patrones que no se ven en el dominio del tiempo, aplicandose en estudios de estres, fatiga, sueño o ejercicio.
+
+![image](https://github.com/user-attachments/assets/0e602461-ed07-46f5-a14c-761075c0f53f)
+
+#### Diferencias analisis del tiempo y la frecuencia.
+En el dominio del tiempo podemos analizar parametros globales como la media de los intervalos RR y la desviacion estandar, por medio de este podemos obtener una vision general del ritmo cardiaco y como varia este, pero no podemos identificar cuando ocurren los cambios mientras que en el domidio tiempo-frecuencia es evidente la variacion de frecuencias especificas a lo largo del tiempo, revelando las transiciones de actividad simpatica y parasimpatica.
+
+#### Efecto de funciones Wavelet.
+en las funciones Wavelet como la morlet que fue la utilizada fue buena para la deteccion de componentes sinusoidales ademas fue muy util para el analisis de HRV, al cambiar la wavelet afectaria la nitidez, localizacion y sensibilidad del espectograma, afectando principalmente la interpretacion de la actividad autonoma.
+
+#### Aplicaciones de esta practica.
+podemos aplicar esta practica en el monitoreo de varias areas como por ejemplo la cardiologia, psicologia, neurociencia, deporte, tecnologia waerable y investigacion biomedica.
 
 </p>
 
-### Análisis de resultados
-<p>
-Para el análisis de los resultados proporcionados, podemos evidenciar que la frecuencia de oscilacion es mayor en la contraccion 1 mostrando un patron de oscilaciones densas y uniformes, indicando que el musculo genera impulsos electricos con alta frecuencia, mientras que en la contraccion 37 la frecuencia se reduce de forma considerable, las oscilaciones son irregulares y menos frecuentes, lo que podriamos interpretar como una fatiga muscular donde lla unidad motora disminuye su tasa de disparo y coordinacion.
-</p>
 
 ### Requisitos
 <p>
 
-  - Electrodos de superficie para EMG.
+  - Electrodos de superficie para ECG.
   - Sistema de adquisición de datos (DAQ).
   - Software de análisis (Python, NI-DAQmx).
   - Computador con acceso a internet.
+  - modulo ECG
     
 Para ejecutar el código, es necesario instalar Python e importar las siguientes librerías:
 
 - import librosa
 - import numpy as np
 - import matplotlib,pyplot as plt
-- from sklearn.descomposition import
-- iport scipy
+- import pywavelets
+- import scipy
   
 Tener instalado un compilador, que para este caso se utilizo spyder.  
 </p>
@@ -89,16 +114,21 @@ Tener instalado un compilador, que para este caso se utilizo spyder.
 ### Ejecución
 
 - Asegúrate de que los archivos de datos están en la misma carpeta que los scripts.
--	Ejecuta Lab4.py o LAB4final.py para analizar la señal:
-- python Lab4.py
+-	Ejecuta Lab5.py para analizar la señal:
+- python Lab5.py
   
 
 
 ### Bibliografia
 
-- Heras Rodríguez, MDL (2024). La transformada rápida de Fourier: fundamentos y aplicaciones (Tesis de licenciatura).
-- Mena, A. O., Yolanda, G., Cano, V., & Tizayuca-pachuca, F. (2014). Adquisición y procesamiento de una señal electromiográfica para control de una prótesis. Universidad Autónoma Del Estado de Hidalgo, XXIX, 2, 1-8.
-- Señales usando ventanas, T. A. F. (s/f). Sistemas y Señales I. Edu.ar. Recuperado el 4 de octubre de 2024, de https://www.fceia.unr.edu.ar/tesys/html/Analisis_Frecuencial_usando_ventanas.pdf
+- Frecuencia cardiaca. (s/f). Fundación Española del Corazón. Recuperado el 31 de octubre de 2024, de https://fundaciondelcorazon.com/prevencion/marcadores-de-riesgo/frecuencia-cardiaca.html
+- Montoya, JRA (2001). La onda transformada. Revista de la Universidad de Mendoza.
+- Electrocardiograma. (s/f). Fundación Española del Corazón. Recuperado el 31 de octubre de 2024, de https://fundaciondelcorazon.com/informacion-para-pacientes/metodos-diagnosticos/electrocardiograma.html
+- Martínez, JP, & Olmos, S. Sistema de Detección de Puntos Significativos de la señal ECG basado en la Transformada Wavelet. Dep. de Ingeniería Electrónica y Comunicaciones. Univ. de Zaragoza.
+- Peña, J. (2004). Espectrogramas basados en funciones Wavelets. Museo Nacional de Ciencias NaturalesMadrid.
+- Riaño-Ruiz, LM, & Riveros-Mestre, JS (2023). Sistema de adquisición de señales electrocardiográficas para visualizar el comportamiento cardíaco en corredores de 100 mt.
+Medicus, H. (2024, 22 de junio). Efecto de la estimulación simpática y parasimpática sobre la frecuencia cardíaca. Homo médico. https://homomedicus.com/efecto-de-la-estimulacion-simpatica-y-parasimpatica-sobre-la-frecuencia-cardiaca/
+
 
 
 ### Licencia
