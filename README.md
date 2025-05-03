@@ -16,12 +16,12 @@ El SNA se divide en dos ramas, el sistema simpatico y el parasimpatico donde el 
 Es una técnica que tiene el objetivo de registrar la actividad eléctrica del corazón producida en cada latido cardíaco. Esta actividad eléctrica se capta desde la superficie corporal y se grafica en un papel mediante una representación trazada, por medio de esta se observan diferentes ondas que representan los estímulos eléctricos de las aurículas y los ventrículos.
 Para el registro de esta tecnica, se hace una segmentación por fases que describen la actividad eléctrica del corazón:
 
-•	Onda P: Representa la despolarización de las aurículas.
-•	Complejo QRS: Representa la despolarización de los ventrículos.
-•	Onda Q: Primera deflexión negativa del complejo.
-•	Onda R: Primera deflexión positiva del complejo.
-•	Onda S: Segunda deflexión negativa del complejo (si existe).
-•	Onda T: Representa la repolarización de los ventrículos.
+-	Onda P: Representa la despolarización de las aurículas.
+-	Complejo QRS: Representa la despolarización de los ventrículos.
+-	Onda Q: Primera deflexión negativa del complejo.
+-	Onda R: Primera deflexión positiva del complejo.
+-	Onda S: Segunda deflexión negativa del complejo (si existe).
+-	Onda T: Representa la repolarización de los ventrículos.
 
 ![image](https://github.com/user-attachments/assets/8e3123bd-8bc8-4e75-b14a-fc430fc9a334)
 
@@ -38,12 +38,7 @@ Es un indicador de el equilibrio en el SNA, para medir las fluctuaciones en los 
 ### Transformada Wavelet.
 La transformada wavelet es una técnica matemática la cual se encarga de descomponer una señal en una serie de funciones básicas llamadas wavelets. A diferencia de la transformada de Fourier, que descompone una señal en componentes sinusoidales de diferentes frecuencias, las wavelets ofrecen una representación más localizada en el tiempo y la frecuencia, lo que las hace particularmente útiles para analizar señales no estacionarias.
 Las wavelets son funciones con una duración limitada y un valor promedio cercano a cero. Su forma puede variar, lo que permite adaptar el análisis a diferentes tipos de señales. Al descomponer una señal en wavelets, se obtiene una representación que revela tanto los componentes de baja frecuencia (tendencias a largo plazo) como los de alta frecuencia.
-En este laboratorio, hacer uso de la técnica del electrocardiograma (ECG) la wavelet transformada permite descomponer una señal compleja en diferentes frecuencias y localizaciones temporales, lo que facilita la identificación de características específicas y la detección de anomalías. hay diferentes tipos de transformada, como por ejemplo.
-•	Wavelet de Haar: Una de las wavelets más simples, útil para detectar discontinuidades y cambios bruscos en la señal.
-•	Wavelets de Daubechies: Wavelets con diferentes niveles de regularidad, lo que las hace versátiles para una amplia gama de aplicaciones.
-•	Wavelet de Morlet: Wavelet compleja con una forma similar a una onda sinusoidal amortiguada, adecuada para analizar señales con componentes tanto sinusoidales como transitorios.
-•	Wavelet de Symlet: Similar a la wavelet de Daubechies, pero con simetría alrededor de cero.
-•	Wavelet de Coiflet: Wavelet con un número de momentos nulos, lo que la hace útil para aproximar funciones suaves.
+En este laboratorio, hacer uso de la técnica del electrocardiograma (ECG) la wavelet transformada permite descomponer una señal compleja en diferentes frecuencias y localizaciones temporales, lo que facilita la identificación de características específicas y la detección de anomalías. hay diferentes tipos de transformada, como por ejemplo. Wavelet de Haar: Una de las wavelets más simples, útil para detectar discontinuidades y cambios bruscos en la señal. Wavelets de Daubechies: Wavelets con diferentes niveles de regularidad, lo que las hace versátiles para una amplia gama de aplicaciones. Wavelet de Morlet: Wavelet compleja con una forma similar a una onda sinusoidal amortiguada, adecuada para analizar señales con componentes tanto sinusoidales como transitorios. Wavelet de Symlet: Similar a la wavelet de Daubechies, pero con simetría alrededor de cero.	Wavelet de Coiflet: Wavelet con un número de momentos nulos, lo que la hace útil para aproximar funciones suaves.
 
 
 ### Diagrama de flujo
