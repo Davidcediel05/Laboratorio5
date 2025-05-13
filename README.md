@@ -43,7 +43,7 @@ En este laboratorio, hacer uso de la técnica del electrocardiograma (ECG) la wa
 
 ### Diagrama de flujo
 
-![image](https://github.com/user-attachments/assets/36ae25c8-3379-47e8-8ed6-56edf2e5cb7d)
+
 
 
 
